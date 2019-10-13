@@ -153,7 +153,14 @@ ansible-playbook clean-up.yml
 * If Ansible keeps saying that requests or googleauth aren't installed, run `which python` to see which copy of the
   Python interpreter you installed the dependencies to. In ansible_hosts, append `ansible_python_interpreter=PATH_FROM_WHICH_PYTHON`
   to the `localhost` line
+  
+* You may get below error 
+`fatal: [localhost]: FAILED! => {"changed": false, "msg": "libcloud with GCE support (0.17.0+) required for this module"}`
 
+Execute below command to get rid of the error
+```
+pip install apache-libcloud
+```
 
 ## Contributing
 
